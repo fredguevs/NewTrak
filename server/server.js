@@ -1,3 +1,4 @@
+// Import modules
 import express from 'express';
 import fetch from 'node-fetch';
 import _ from 'lodash';
@@ -49,7 +50,8 @@ app.post('/recommendations', async (req, res) => {
     }
 
     try {
-        const response = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${songId}&limit=50`, {
+        // Grabs 25 songs
+        const response = await fetch(`https://api.spotify.com/v1/recommendations?seed_tracks=${songId}&limit=25`, {
             headers: {
                 'Authorization': `Bearer ${access_token}`
             }
@@ -66,6 +68,31 @@ app.post('/recommendations', async (req, res) => {
     } catch (error) {
         console.error('Error fetching recommendations:', error);
         res.status(500).send('Error fetching recommendations');
+    }
+});
+
+// Endpoint to search for songs
+app.get('/search', async (req, res) => {
+    const { query } = req.query;
+
+    if (!access_token) {
+        await getAccessToken();
+    }
+
+    try {
+        const response = await fetch(`https://api.spotify.com/v1/search?q=${query}&type=track&limit=10`, {
+            headers: {
+                'Authorization': `Bearer ${access_token}`
+            }
+        });
+        if (!response.ok) {
+            throw new Error(`Error searching for tracks: ${response.statusText}`);
+        }
+        const data = await response.json();
+        res.json(data.tracks.items);
+    } catch (error) {
+        console.error('Error searching for tracks:', error);
+        res.status(500).send('Error searching for tracks');
     }
 });
 

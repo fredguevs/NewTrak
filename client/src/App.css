@@ -1,0 +1,201 @@
+body {
+    background-color: #FBEAEB;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+a {
+    color: #3c3c3c;
+    text-decoration: none;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #3c3c3c;
+    border: 0.5px solid #f6f6f6;
+    height: auto;
+    line-height: 0.5;
+    letter-spacing: 3px;
+    background-color: #f6f6f6;
+}
+
+.title img {
+    margin-top: 4px;
+    margin-left: 3px;
+    height: 40px;
+    width: 40px;
+}
+
+.app-container {
+    font-family: Arial, sans-serif;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    background-color: #89ABE3;
+}
+
+.app-container .about {
+    text-align: center;
+}
+
+.app-container .about h1 {
+    font-size: 50px;
+    color: #f6f6f6;
+}
+
+.app-container .about p {
+    font-size: 30px;
+    color: #f6f6f6;
+    margin-bottom: 30px;
+}
+
+.search-container {
+    position: relative;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    background-color: #f6f6f6;
+    display: block;
+    padding: 12px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    width: 100%;
+}
+
+input:focus {
+    background-color: #f0f0f0;
+}
+
+.suggestions-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+    border-top: none;
+    z-index: 1000;
+}
+
+.suggestion-item {
+    display: block;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background-color: #f6f6f6;
+    font-size: 18px;
+}
+
+.suggestion-item:hover {
+    background-color: #e0e0e0;
+}
+
+.get-recommendations-button {
+    display: block;
+    padding: 12px;
+    font-size: 22px;
+    cursor: pointer;
+    background-color: #3c3c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    max-width: fit-content;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.get-recommendations-button:hover {
+    background-color: #0f0f0f;
+}
+
+.selected-song {
+    text-align: center;
+    margin: 10px auto;
+    padding-top: 30px;
+    width: 60%;
+    max-width: 600px;
+}
+
+.selected-song img.album-cover {
+    height: 200px;
+    width: 200px;
+}
+
+.selected-song p {
+    font-size: 30px;
+    color: #317248;
+}
+
+.recommendations-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.header-track,
+.header-artist,
+.header-time {
+    text-align: center;
+}
+
+.recommendations-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.recommendation-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Adjust column sizes as needed */
+    align-items: center;
+    margin: 8px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%; /* Adjust width to make the item less wide */
+    max-width: 800px; /* Optional: Limit the maximum width */
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.recommendation-item:hover {
+    background-color: #e0e0e0;
+}
+
+.recommendation-item .recommendation-info {
+    display: flex;
+    align-items: center;
+}
+
+.recommendation-item img.album-cover {
+    height: 75px;
+    width: 75px;
+    margin-right: 20px;
+}
+
+.recommendation-item .song-name {
+    font-weight: bold;
+}
+
+.recommendation-item .song-artist,
+.recommendation-item .song-duration {
+    color: #555;
+    text-align: center;
+}
