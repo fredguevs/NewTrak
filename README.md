@@ -1,6 +1,6 @@
-# Similar.ly
+# NewTrak
 
-**Similar.ly** is a music discovery app that finds similar songs on Spotify and creates playlists for users, with an emphasis on discovering new music.
+**NewTrak** is a music discovery app that finds similar songs on Spotify and creates playlists for users, with an emphasis on discovering new music.
 
 ## Prerequisites
 
